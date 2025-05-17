@@ -1,0 +1,151 @@
+.layout-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .side-panel {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    padding-top: 80px;
+    position: fixed;
+    transition: width 0.3s ease;
+  }
+  
+  .side-panel.collapsed {
+    width: 60px; /* Shrunk width for collapsed state */
+  }
+  
+  .side-panel.expanded {
+    width: 150px; /* Normal expanded width */
+  }
+  
+  .side-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 40px; /* Ensure content isn't hidden under the shrink button */
+  }
+  
+  .side-panel ul li {
+    padding: 15px;
+  }
+  
+  .side-panel ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .side-panel ul li a:hover {
+    background-color: #555;
+  }
+  
+  .side-panel .toggle-btn {
+    background-color: #333;
+    color: white;
+    border: bisque;
+    padding: 1px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 20; /* Ensure it's always on top */
+    padding-top: 70px;
+  }
+  
+  .main-content {
+    margin-left: 200px;
+    padding-top: 70px;  /* Added padding to avoid overlap with the fixed nav bar */
+    transition: margin-left 0.3s ease, width 0.3s ease;
+  }
+  
+  .main-content .collapsed {
+    width: auto;  /* When the side panel is collapsed */
+  }
+  
+  .page-content {
+    padding: 20px;
+  }
+  
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #007bff;
+    padding: 10px;
+    color: white;
+    z-index: 100;
+  }
+  
+  .nav-left h1 {
+    margin: 0;
+  }
+  
+  .nav-right {
+    display: flex;
+    gap: 20px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .logout-btn, .chat-btn {
+    font-size: 16px;
+  }
+
+  .profile-btn {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  
+  /* Adjust chat box */
+  .chat-container {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    height: 60vh;
+    overflow-y: auto;
+  }
+  
+  /* Chat box container adjustment */
+  .chat-box {
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* For responsive handling */
+  @media (max-width: 768px) {
+    .layout-container {
+      flex-direction: column;
+    }
+  
+    .side-panel {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  

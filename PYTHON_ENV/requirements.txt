@@ -1,0 +1,6 @@
+Flask
+google-genai
+joblib
+transformers
+scikit-learn
+tensorflow
