@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sounddevice
+scipy
+librosa
+noisereduce
+torch
+tensorflow
+transformers
+joblib
+numpy
